@@ -8,7 +8,7 @@ import fs from 'fs';
     //con la bienvenida a tu proyecto
     function darBienvenida(req, res) {
        //Agrega lo mínimo necesario en bienvenida.html
-       //Agrega un enlace en bienvenida a la página de "Nosotros" de tu proyecto 
+       
       
       fs.readFile('bienvenida.html', 'utf8', (error, data) => {
         if (error) {
