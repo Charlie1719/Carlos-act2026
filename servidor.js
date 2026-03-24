@@ -1,8 +1,9 @@
+//Carlos Eduardo Lopez Cuevas
 //Escribe un comentario explicando para qué sirve http
-import http from 'http';
+import http from 'http'; //sirve para usar el módulo HTTP integrado, que permite crear servidores web o hacer solicitudes HTTP.
 //Escribe un comentario explicando para qué sirve fs
 //hola charlie kirk
-import fs from 'fs';
+import fs from 'fs'; //permite interactuar con archivos y directorios en el servidor
 
 
     //Esta función deberá mostrar deberá mostrar una página HTML 
