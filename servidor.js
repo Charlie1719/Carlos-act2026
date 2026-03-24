@@ -15,11 +15,13 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
       fs.readFile('bienvenida.html', 'utf8', (error, data) => {
         if (error) {
            //Escribe qué significa el 500 
+            //El 500 es un codigo o mensaje de error que indica que algo fallo al procesar la solicitud
           res.writeHead(500, { 'Content-Type': 'text/plain' });
           res.end('Oh no!!!!');
           return;
         }
         //Escribe qué significa el 200
+          ////El 200 es un codigo o mensaje que seria que todo salio bien, OK
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(data);
     });
