@@ -51,6 +51,18 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
       res.end(JSON.stringify(mascotas));
     }
 
+     function mostrarMascotas(req, res) {
+        //Construye una página básica adpotantes.html HECHO PE MI CAUSA, PERU ES CLAVE
+        fs.readFile('mascotas.html', 'utf8', (error, data) => {
+            if (error) {
+              res.writeHead(500, { 'Content-Type': 'text/plain' });
+              res.end('Oh no!!!!');
+              return;
+            }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
+        });
+      }
   
     function mostrarPerfil(req, res) {
         fs.readFile('perfil.html', 'utf8', (error, data) => {
