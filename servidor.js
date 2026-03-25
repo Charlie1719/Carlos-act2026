@@ -100,7 +100,7 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
     function manejarRuta404(req, res) {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
       //Cambia el mensaje por algo más divertido
-      res.end('No encontramos esa huellita');
+      res.end('Toc Toc. Quien es? Tu mascota no');
     }
 
     //incluye el enlace a la documentación de createServer
