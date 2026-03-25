@@ -1,4 +1,3 @@
-//Carlos Eduardo Lopez Cuevas
 //Escribe un comentario explicando para qué sirve http
 import http from 'http'; //sirve para usar el módulo HTTP integrado, que permite crear servidores web o hacer solicitudes HTTP.
 //Escribe un comentario explicando para qué sirve fs
@@ -10,8 +9,7 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
     //con la bienvenida a tu proyecto
     function darBienvenida(req, res) {
        //Agrega lo mínimo necesario en bienvenida.html
-        res.end("Bienvenido Usuario promedio");
-       
+       console.log("Bienvenido usuario promedio");
       
       fs.readFile('bienvenida.html', 'utf8', (error, data) => {
         if (error) {
@@ -115,6 +113,19 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
       res.end('Toc Toc. Quien es? Tu mascota no');
     }
 
+    function mostrarEquipo(req, res) {
+        //Construye una página básica adpotantes.html HECHO PE MI CAUSA, PERU ES CLAVE
+        fs.readFile('equipo.html', 'utf8', (error, data) => {
+            if (error) {
+              res.writeHead(500, { 'Content-Type': 'text/plain' });
+              res.end('Oh no!!!!');
+              return;
+            }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
+        });
+      }
+
     //incluye el enlace a la documentación de createServer
     const servidor = http.createServer((req, res) => {
       const url = req.url;
@@ -131,6 +142,9 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
       } 
       else if (url === '/adoptantes') {
         mostrarAdoptantes(req, res);
+      } 
+      else if (url === '/equipo') {
+        mostrarEquipo(req, res);
       } 
       //Agrega una ruta /equipo y su función correspondiente para que muestre el equipo del proyecto
       //Haz una página equipo.html correspondiente
