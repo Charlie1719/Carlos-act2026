@@ -66,7 +66,7 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
 
      
       function mostrarAdoptantes(req, res) {
-        //Construye una página básica adpotantes.html
+        //Construye una página básica adpotantes.html HECHO PE MI CAUSA, PERU ES CLAVE
         fs.readFile('adoptantes.html', 'utf8', (error, data) => {
             if (error) {
               res.writeHead(500, { 'Content-Type': 'text/plain' });
