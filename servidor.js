@@ -10,7 +10,7 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
     //con la bienvenida a tu proyecto
     function darBienvenida(req, res) {
        //Agrega lo mínimo necesario en bienvenida.html
-        console.log("Bienvenido Usuario promedio");
+        res.end('Oh no!!!!');("Bienvenido Usuario promedio");
        
       
       fs.readFile('bienvenida.html', 'utf8', (error, data) => {
