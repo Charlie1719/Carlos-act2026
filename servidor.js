@@ -33,13 +33,21 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
     function getMascotas(req, res) {
         //Esto representa un objeto JSON de una mascota
         //Agrega otra mascota
-        const mascotas = {
+        const mascotas = [
+            {
             "nombre": "Pikachu",
-            "color": "Amarillo",
-          };  
+            "color": "Amarillo"
+            },
+            {
+            "nombre": "Rodo",
+            "color": "Blanco"
+            }
+          ];  
       res.writeHead(200, { 'Content-Type': 'application/json' });
       
       //Escribe qué hace la función stringify y por qué la tenemos que usar
+        // JSON.stringify convierte un objeto o arreglo de JavaScript a texto JSON
+      // Se usa porque HTTP solo puede enviar texto, no objetos directamente
       res.end(JSON.stringify(mascotas));
     }
 
