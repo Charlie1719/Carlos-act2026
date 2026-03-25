@@ -81,8 +81,20 @@ import fs from 'fs'; //permite interactuar con archivos y directorios en el serv
     //Esta función deberá enviar un json con los datos de las adoptantes
     function getAdoptantes(req, res) {
     //Tienes que corregir varias cosas en esta sección
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.end('Aquí van los datos de los adoptantes');
+        const adoptantes = [
+            {
+              nombre: "Ana",
+              edad: 25,
+              ciudad: "Guadalajara"
+            },
+            {
+              nombre: "Luis",
+              edad: 30,
+              ciudad: "Zapopan"
+            }
+      ];
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(adoptantes));
     }
 
     function manejarRuta404(req, res) {
